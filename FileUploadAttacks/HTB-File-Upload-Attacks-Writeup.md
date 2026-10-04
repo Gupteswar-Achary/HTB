@@ -25,8 +25,7 @@ Client-side restrictions like `accept` only run in the browser and provide no re
 
 **Initial test:** Uploading a backend script (`.php`) directly returned an error stating only image files are accepted — confirming **server-side validation** is also in place.
 
-<details>
-<summary>script.js (paste source here)</summary>
+script.js
 
 ```javascript
 function checkFile(File) {
@@ -71,7 +70,6 @@ $(document).ready(function () {
 });
 ```
 
-</details>
 
 ---
 
@@ -99,8 +97,7 @@ Uploading this SVG and viewing the rendered output returned the base64-encoded s
 
 ## Step 3 — Filter Analysis & Identifying Logic Gaps
 
-<details>
-<summary>upload.php (paste decoded source here)</summary>
+upload.php
 
 ```php
 <?php
@@ -150,7 +147,6 @@ if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_file)) {
 }
 ```
 
-</details>
 
 Analysis of the retrieved code revealed **three independent checks, each with an implementation flaw**:
 
